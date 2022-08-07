@@ -1,11 +1,11 @@
 import { SafeAreaView, Text } from "react-native";
 
-const TimePunch = () => {
+const History = () => {
   return (
     <SafeAreaView>
-      <Text>Timepunch Screen</Text>
+      <Text>History Screen</Text>
     </SafeAreaView>
   )
 }
 
-export default TimePunch
+export default History
