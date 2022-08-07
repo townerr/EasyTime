@@ -1,8 +1,11 @@
 import { Text } from "react-native";
+import { SafeAreaView } from "react-native-web";
 
 const Home = () => {
   return (
-    <Text>Home</Text>
+    <SafeAreaView>
+      <Text>Home Screen</Text>
+    </SafeAreaView>
   )
 }
 

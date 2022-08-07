@@ -1,3 +1,4 @@
+//import { TailwindProvider } from "tailwindcss-react-native";
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -9,10 +10,10 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Home' component={Home} />
-        <Stack.Screen name='TimePunch' component={TimePunch} />
-      </Stack.Navigator>
+        <Stack.Navigator>
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='TimePunch' component={TimePunch} />
+        </Stack.Navigator>
     </NavigationContainer>
   );
 }

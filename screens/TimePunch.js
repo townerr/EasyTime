@@ -2,7 +2,9 @@ import { Text } from "react-native";
 
 const TimePunch = () => {
   return (
-    <Text>TimePunch</Text>
+    <SafeAreaView>
+      <Text>Timepunch Screen</Text>
+    </SafeAreaView>
   )
 }
 
