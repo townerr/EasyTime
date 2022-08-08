@@ -15,11 +15,11 @@ const App = () => {
     <NavigationContainer>
       <TailwindProvider>
           <Stack.Navigator>
-            <Stack.Screen name='Dashboard' component={Home} />
-            <Stack.Screen name='TimePunch' component={TimePunch} />
-            <Stack.Screen name='History' component={History} />
-            <Stack.Screen name='Profile' component={Profile} />
-            <Stack.Screen name='Calendar' component={Calendar} />
+            <Stack.Screen name='Services Dashboard' component={Home} />
+            <Stack.Screen name='TimePunchScreen' component={TimePunch} />
+            <Stack.Screen name='HistoryScreen' component={History} />
+            <Stack.Screen name='ProfileScreen' component={Profile} />
+            <Stack.Screen name='CalendarScreen' component={Calendar} />
           </Stack.Navigator>
         </TailwindProvider>
     </NavigationContainer>
