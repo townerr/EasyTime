@@ -1,8 +1,7 @@
-import { useNavigation } from "@react-navigation/native";
-import { SafeAreaView, Text, View, FlatList, TouchableOpacity, Image } from "react-native";
+import { SafeAreaView, FlatList } from "react-native";
+import NavigationButton from "../components/NavigationButton";
 
 const Home = () => {
-  const navigation = useNavigation();
 
   const navData = [
     {
@@ -44,17 +43,7 @@ const Home = () => {
         numColumns="2"
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate(item.screen)}
-            className="bg-green-500 w-40 p-4 pl-4 pb-4 pt-8 m-3 mt-6 rounded-lg">
-            <View className="items-center">
-              <Image 
-                source={{uri: item.image}}
-                style={{width: 72, height: 72, resizeMode: "contain", tintColor: "white"}}
-                className="" />
-              <Text className="mt-4 mb-2 text-center text-lg text-white font-semibold">{item.title}</Text>
-            </View>
-          </TouchableOpacity>
+          <NavigationButton item={item} />
         )}/>
     </SafeAreaView>
   )
