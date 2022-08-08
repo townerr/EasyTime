@@ -25,6 +25,12 @@ const Home = () => {
     },
     {
       id: "4",
+      title: "Request Leave",
+      screen: "LeaveScreen",
+      image: "https://img.icons8.com/ios-filled/344/leave.png"
+    },
+    {
+      id: "5",
       title: "Profile",
       screen: "ProfileScreen",
       image: "https://img.icons8.com/ios-glyphs/344/user--v1.png"
@@ -32,8 +38,7 @@ const Home = () => {
   ];
 
   return (
-    <SafeAreaView>
-      <Text className="text-2xl text-center mt-4">EasyTime Services</Text>
+    <SafeAreaView className="items-center">
       <FlatList 
         data={navData}
         numColumns="2"
@@ -41,13 +46,13 @@ const Home = () => {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate(item.screen)}
-            className="bg-green-500 w-40 p-4 pl-4 pb-6 pt-8 m-4 mt-6 rounded-lg">
+            className="bg-green-500 w-40 p-4 pl-4 pb-4 pt-8 m-3 mt-6 rounded-lg">
             <View className="items-center">
               <Image 
                 source={{uri: item.image}}
                 style={{width: 72, height: 72, resizeMode: "contain", tintColor: "white"}}
                 className="" />
-              <Text className="mt-2 mb-2 text-center text-lg text-white font-semibold">{item.title}</Text>
+              <Text className="mt-4 mb-2 text-center text-lg text-white font-semibold">{item.title}</Text>
             </View>
           </TouchableOpacity>
         )}/>
