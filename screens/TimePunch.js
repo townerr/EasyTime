@@ -5,8 +5,7 @@ import SubmitPunchButton from "../components/SubmitPunchButton";
 const TimePunch = () => {
 
   //TODO:
-  //Submit punch button send data to api
-  //Get previous time punch data from api
+  //Submit punch to api
 
   return (
     <SafeAreaView>

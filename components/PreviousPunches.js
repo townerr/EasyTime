@@ -5,6 +5,7 @@ const PreviousPunches = (amount) => {
   //TODO:
   //Display "amount" number of punches. Ex: prev 1 punch or prev 20 punches on table
   //Make it a scrollable list
+  //Get punches from api
 
   return (
     <DataTable>
