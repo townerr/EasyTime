@@ -16,7 +16,7 @@ const TimePunch = () => {
         <Text className="text-2xl mt-8 font-semibold">Previous Time Punch</Text>
       </View>
       <View className="ml-4 mr-4">
-        <PreviousPunches />
+        <PreviousPunches amount={1} />
       </View>
     </SafeAreaView>
   )
