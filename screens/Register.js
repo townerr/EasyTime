@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 
 const Register = () => {
-const { signUp } = useAuth();
+  const { signUp } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

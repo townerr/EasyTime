@@ -8,31 +8,36 @@ const Home = () => {
       id: "1",
       title: "Time Punch",
       screen: "Time Punch Submission",
-      image: "https://img.icons8.com/ios-filled/344/clock-add.png"
+      image: "https://img.icons8.com/ios-filled/344/clock-add.png",
+      disabled: false
     },
     {
       id: "2",
       title: "Time History",
       screen: "Time Punch History",
-      image: "https://img.icons8.com/ios-filled/344/order-history.png"
+      image: "https://img.icons8.com/ios-filled/344/order-history.png",
+      disabled: false
     },
     {
       id: "3",
       title: "Calendar",
       screen: "Calendar",
-      image: "https://img.icons8.com/ios-filled/344/calendar--v1.png"
+      image: "https://img.icons8.com/ios-filled/344/calendar--v1.png",
+      disabled: true,
     },
     {
       id: "4",
       title: "Request Leave",
       screen: "Leave System",
-      image: "https://img.icons8.com/ios-filled/344/leave.png"
+      image: "https://img.icons8.com/ios-filled/344/leave.png",
+      disabled: true
     },
     {
       id: "5",
       title: "Profile",
       screen: "Profile",
-      image: "https://img.icons8.com/ios-glyphs/344/user--v1.png"
+      image: "https://img.icons8.com/ios-glyphs/344/user--v1.png",
+      disabled: false
     },
   ];
 
