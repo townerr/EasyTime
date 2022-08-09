@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import { useNavigation } from "@react-navigation/native";
 
+//TODO:
+//Loading to transition to homescreen
+//error messages on invalid login/input
+
 const Login = () => {
   const { signIn } = useAuth();
   const [email, setEmail] = useState("");

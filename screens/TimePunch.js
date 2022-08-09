@@ -4,9 +4,6 @@ import SubmitPunchButton from "../components/SubmitPunchButton";
 
 const TimePunch = () => {
 
-  //TODO:
-  //Submit punch to api
-
   return (
     <SafeAreaView>
       <View className="items-center">

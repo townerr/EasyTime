@@ -13,7 +13,8 @@ import Register from '../screens/Register';
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
-  const { user} = useAuth();
+  const { user } = useAuth();
+  
   return (
     <Stack.Navigator>
       {user ? (

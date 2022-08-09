@@ -2,6 +2,11 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 import React, { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 
+//TODO:
+//Loading to transition to home
+//error messages/validation on invalid register/input
+//2 password fields to verify correct password
+
 const Register = () => {
   const { signUp } = useAuth();
   const [email, setEmail] = useState("");
