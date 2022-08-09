@@ -1,29 +1,32 @@
 import { TailwindProvider } from "tailwindcss-react-native";
-import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-
-import Home from './screens/Home';
-import TimePunch from './screens/TimePunch';
-import History from './screens/History';
-import Profile from './screens/Profile';
-import Calendar from './screens/Calendar';
-import Leave from './screens/Leave';
-
-const Stack = createStackNavigator();
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { AuthProvider } from "./hooks/useAuth";
+import StackNavigator from "./components/StackNavigator";
 
 const App = () => {
+  const firebaseConfig = {
+    apiKey: 'AIzaSyC5EnvZUkSBgFzzpqT8MY_vXIBJ1CgsFPU',
+    authDomain: 'easytime-f251e.firebaseapp.com',
+    databaseURL: 'https://project-id.firebaseio.com',
+    projectId: 'easytime-f251e',
+    storageBucket: 'easytime-f251e.appspot.com',
+    messagingSenderId: 'sender-id',
+    appId: '1:454766338751:ios:b38e9f5ca41ce909781c0a',
+  };
+
+  initializeApp(firebaseConfig);
+
+  const auth = getAuth();
+
   return (
     <NavigationContainer>
-      <TailwindProvider>
-          <Stack.Navigator>
-            <Stack.Screen name='EasyTime Services Dashboard' component={Home} />
-            <Stack.Screen name='TimePunchScreen' component={TimePunch} />
-            <Stack.Screen name='HistoryScreen' component={History} />
-            <Stack.Screen name='ProfileScreen' component={Profile} />
-            <Stack.Screen name='CalendarScreen' component={Calendar} />
-            <Stack.Screen name='LeaveScreen' component={Leave} />
-          </Stack.Navigator>
+      <AuthProvider auth={auth}>
+        <TailwindProvider>
+          <StackNavigator />
         </TailwindProvider>
+      </AuthProvider>
     </NavigationContainer>
   );
 }
