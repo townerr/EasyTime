@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../config/firebase';
 
 const AuthContext = createContext({});
-let auth = {};
 
-export const AuthProvider = ({children}, {firebaseAuth}) => {
+export const AuthProvider = ({children}) => {
   const value = useAuthProvider();
-  auth = firebaseAuth;
 
   return (
     <AuthContext.Provider value={value}>
@@ -21,7 +20,7 @@ function useAuthProvider() {
 
   const signIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-      user = userCredential.user;
+      setUser(userCredential.user);
     }).catch((error) => {
       console.log("Error Code: " + error.code);
       console.log("Error Message: " + error.message);
