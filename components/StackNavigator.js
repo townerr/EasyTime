@@ -8,6 +8,7 @@ import Profile from '../screens/Profile';
 import Calendar from '../screens/Calendar';
 import Leave from '../screens/Leave';
 import Login from '../screens/Login';
+import Register from '../screens/Register';
 
 const Stack = createStackNavigator();
 
@@ -18,14 +19,17 @@ const StackNavigator = () => {
       {user ? (
         <>
           <Stack.Screen name='EasyTime Services Dashboard' component={Home} />
-          <Stack.Screen name='TimePunchScreen' component={TimePunch} />
-          <Stack.Screen name='HistoryScreen' component={History} />
-          <Stack.Screen name='ProfileScreen' component={Profile} />
-          <Stack.Screen name='CalendarScreen' component={Calendar} />
-          <Stack.Screen name='LeaveScreen' component={Leave} />
+          <Stack.Screen name='Time Punch Submission' component={TimePunch} />
+          <Stack.Screen name='Time Punch History' component={History} />
+          <Stack.Screen name='Profile' component={Profile} />
+          <Stack.Screen name='Calendar' component={Calendar} />
+          <Stack.Screen name='Leave System' component={Leave} />
         </>
       ) : (
-        <Stack.Screen name='LoginScreen' component={Login} options={{headerShown: false}} />
+        <>
+          <Stack.Screen name='Login' component={Login} options={{headerShown: false}} />
+          <Stack.Screen name='Register' component={Register} />
+        </>
       )}
     </Stack.Navigator>
   )

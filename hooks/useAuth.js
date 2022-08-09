@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
 
 const AuthContext = createContext({});
@@ -22,6 +22,18 @@ function useAuthProvider() {
     signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
       setUser(userCredential.user);
     }).catch((error) => {
+      console.log("Sign In Error:");
+      console.log("Error Code: " + error.code);
+      console.log("Error Message: " + error.message);
+    });
+  }
+
+  const signUp = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
+      setUser(userCredential.user);
+    })
+    .catch((error) => {
+      console.log("Sign Up Error:");
       console.log("Error Code: " + error.code);
       console.log("Error Message: " + error.message);
     });
@@ -30,6 +42,7 @@ function useAuthProvider() {
   return {
     user,
     signIn,
+    signUp,
     loading,
   };
 }
